@@ -16,7 +16,7 @@ const projectsData = [
     description: 'A robust compiler built from scratch for a Python-like language using C++. Focuses on memory efficiency, Lexical Analysis (Flex), Parsing (Bison), and complex data structures.',
     tags: ["C++", "Flex", "Bison", "Compilers"],
     github: "https://github.com/yos4i/MiniCompiler",
-    image: "/assets/minicompiler.jpg",
+    image: "/assets/minicompiler.png",
     color: "blue"
   },
   {
@@ -26,7 +26,7 @@ const projectsData = [
     description: 'AI semantic solver for the Semantle game. Utilizes Word2Vec and proprietary clustering algorithms to decipher semantic relationships and solve word puzzles efficiently.',
     tags: ["Python", "NLP", "Word2Vec", "AI"],
     github: "https://github.com/yos4i/Seemanthink",
-    image: "/assets/seemanthink.jpg",
+    image: "/assets/seemanthink.png",
     color: "indigo"
   },
   {
@@ -36,7 +36,7 @@ const projectsData = [
     description: 'Production-ready Task Management Microservice. Built with Java 17 & Spring Boot, featuring automated scheduling, JPA persistence, and a layered architectural design.',
     tags: ["Java", "Spring Boot", "Microservices"],
     github: "https://github.com/yos4i/TMMPro",
-    image: "/assets/tmmpro.jpg",
+    image: "/assets/tmmpro.png",
     color: "green"
   },
   {
@@ -46,7 +46,7 @@ const projectsData = [
     description: 'Modern shift management platform. Features real-time updates for shift changes, algorithmic weekly schedule generation, and a responsive React frontend.',
     tags: ["React", "Firebase", "Tailwind"],
     github: "https://github.com/yos4i/Empire",
-    image: "/assets/empire.jpg",
+    image: "/assets/empire.png",
     color: "purple"
   },
 ];
