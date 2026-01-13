@@ -22,13 +22,6 @@ Personal portfolio website showcasing my projects, technical skills, and profess
 
 Programming languages, system design, networking & security, AI & data science, development tools, and core computer science fundamentals.
 
-### Special Features
-
-- Stacking card scroll animations with parallax effects
-- Responsive dark mode support
-- Smooth transitions and interactive UI elements
-- Single-page architecture with anchor navigation
-
 ## Contact
 
 GitHub: [github.com/yos4i](https://github.com/yos4i)
