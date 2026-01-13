@@ -1,16 +1,54 @@
-# React + Vite
+# Yossi — Portfolio (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website built with React and Vite, styled with Tailwind CSS, and enhanced with Framer Motion for smooth UI animations. Purpose: showcase projects, skills, and contact information in a clean and fast experience.
 
-Currently, two official plugins are available:
+## ⚙️ What's in this repo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19 + Vite
+- Tailwind CSS for rapid responsive design
+- Framer Motion for smooth animations
+- Icons via `lucide-react`
 
-## React Compiler
+## 🚀 Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Install dependencies:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Start the dev server:
+
+```bash
+npm run dev
+```
+
+3. Open in your browser:
+
+http://localhost:5173 (or the address printed by Vite in the console)
+
+4. To build for production and preview locally:
+
+```bash
+npm run build
+npm run preview
+```
+
+## 🛠️ Development tips
+
+- Edit files inside `src/` to update content and components
+- Tailwind configuration is in `tailwind.config.js`
+- Add images/assets to `src/assets` or `public/assets`
+
+## 📦 Useful scripts
+
+- `npm run dev` — Development server with HMR
+- `npm run build` — Production build
+- `npm run preview` — Serve the production build locally
+
+## 🙋‍♂️ License & Contact
+
+Author: Yossi
+
+Would you like me to commit this change locally and push to the remote (GitHub)? If so, I can do that for you.
+
