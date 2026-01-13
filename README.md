@@ -32,5 +32,5 @@ Programming languages, system design, networking & security, AI & data science, 
 ## Contact
 
 GitHub: [github.com/yos4i](https://github.com/yos4i)
-LinkedIn: [linkedin.com/in/yossi-elbaz](https://www.linkedin.com/in/yossi-elbaz)
+LinkedIn: [linkedin.com/in/yossi-elbaz-289a21277](https://www.linkedin.com/in/yossi-elbaz-289a21277/)
 
