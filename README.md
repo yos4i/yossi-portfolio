@@ -1,54 +1,36 @@
-# Yossi — Portfolio (React + Vite)
+# Yossi Elbaz — Portfolio
 
-Personal portfolio website built with React and Vite, styled with Tailwind CSS, and enhanced with Framer Motion for smooth UI animations. Purpose: showcase projects, skills, and contact information in a clean and fast experience.
+Personal portfolio website showcasing my projects, technical skills, and professional background as a Computer Science graduate specializing in Systems Design, Cybersecurity, and AI.
 
-## ⚙️ What's in this repo
+## Tech Stack
 
-- React 19 + Vite
-- Tailwind CSS for rapid responsive design
-- Framer Motion for smooth animations
-- Icons via `lucide-react`
+- **Frontend:** React 19 + Vite
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
 
-## 🚀 Run locally
+## What's Inside
 
-1. Install dependencies:
+### Featured Projects
 
-```bash
-npm install
-```
+- **MiniCompiler** — C++ compiler for a Python-like language with Flex & Bison
+- **Seemanthink** — AI semantic solver using NLP and Word2Vec algorithms
+- **TMMPro** — Task management microservice built with Java Spring Boot
+- **Empire** — Shift management platform with React and Firebase
 
-2. Start the dev server:
+### Technical Skills
 
-```bash
-npm run dev
-```
+Programming languages, system design, networking & security, AI & data science, development tools, and core computer science fundamentals.
 
-3. Open in your browser:
+### Special Features
 
-http://localhost:5173 (or the address printed by Vite in the console)
+- Stacking card scroll animations with parallax effects
+- Responsive dark mode support
+- Smooth transitions and interactive UI elements
+- Single-page architecture with anchor navigation
 
-4. To build for production and preview locally:
+## Contact
 
-```bash
-npm run build
-npm run preview
-```
-
-## 🛠️ Development tips
-
-- Edit files inside `src/` to update content and components
-- Tailwind configuration is in `tailwind.config.js`
-- Add images/assets to `src/assets` or `public/assets`
-
-## 📦 Useful scripts
-
-- `npm run dev` — Development server with HMR
-- `npm run build` — Production build
-- `npm run preview` — Serve the production build locally
-
-## 🙋‍♂️ License & Contact
-
-Author: Yossi
-
-Would you like me to commit this change locally and push to the remote (GitHub)? If so, I can do that for you.
+GitHub: [github.com/yos4i](https://github.com/yos4i)
+LinkedIn: [linkedin.com/in/yossi-elbaz](https://www.linkedin.com/in/yossi-elbaz)
 
