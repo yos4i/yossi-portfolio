@@ -89,18 +89,34 @@ const SectionHeading = ({ title, subtitle, icon: Icon }) => (
   </motion.div>
 );
 
-const SkillCategory = ({ title, skills, icon: Icon }) => (
-  <motion.div 
+const SkillCategory = ({ title, skills, icon: Icon, gradient }) => (
+  <motion.div
     variants={fadeInUp}
-    className="bg-white dark:bg-slate-900 p-6 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow"
+    whileHover={{ y: -8, transition: { duration: 0.3 } }}
+    className="group relative bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-800 p-8 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl transition-all overflow-hidden text-center"
   >
-    <div className="flex items-center gap-2 mb-4 text-blue-600">
-      <Icon size={20} />
-      <h3 className="font-black uppercase tracking-widest text-xs">{title}</h3>
+    {/* Gradient background overlay on hover */}
+    <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${gradient}`}></div>
+
+    {/* Icon with gradient background - centered */}
+    <div className="relative z-10 mb-6 flex justify-center">
+      <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${gradient} shadow-lg`}>
+        <Icon size={32} className="text-white" />
+      </div>
     </div>
-    <div className="flex flex-wrap gap-2">
+
+    {/* Title - centered */}
+    <h3 className="relative z-10 font-black text-xl mb-6 text-slate-900 dark:text-white tracking-tight group-hover:text-white transition-colors duration-300">
+      {title}
+    </h3>
+
+    {/* Skills - centered */}
+    <div className="relative z-10 flex flex-wrap gap-2 justify-center">
       {skills.map(skill => (
-        <span key={skill} className="px-3 py-1 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-bold border border-slate-100 dark:border-slate-700">
+        <span
+          key={skill}
+          className="px-4 py-2 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-slate-300 rounded-xl text-sm font-bold border border-slate-200 dark:border-slate-700 group-hover:bg-white/95 group-hover:text-slate-900 group-hover:border-white/50 transition-all"
+        >
           {skill}
         </span>
       ))}
@@ -232,13 +248,19 @@ export default function App() {
       </section>
 
       {/* --- STACKING PROJECTS SECTION --- */}
-      <section id="projects" className="relative pb-32">
-        <div className="mb-24 px-6 max-w-6xl mx-auto">
-            <SectionHeading 
-                title="Featured Projects" 
-                subtitle="A showcase of technical complexity and creative problem solving"
-                icon={Zap}
-            />
+      <section id="projects" className="relative pb-16">
+        <div className="mb-16 px-6 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="text-center"
+            >
+              <h2 className="text-5xl md:text-6xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
+                Featured Projects
+              </h2>
+            </motion.div>
         </div>
         
         <div className="w-full">
@@ -257,28 +279,90 @@ export default function App() {
         </div>
       </section>
 
-      {/* --- TECH ARSENAL (Original) --- */}
-      <section className="py-32 bg-white dark:bg-slate-900/50 border-y border-slate-100 dark:border-slate-800">
-        <div className="max-w-6xl mx-auto px-6">
-          <SectionHeading title="Technical Arsenal" icon={Activity} subtitle="Core competencies from CV" />
-          <motion.div 
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      {/* --- TECH ARSENAL --- */}
+      <section className="relative py-16 bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900">
+        {/* Background decoration */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          {/* Centered heading */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mb-16 text-center"
           >
-            <SkillCategory title="Programming" icon={Code2} skills={["C++", "Python", "C", "Java", "SQL", "Bash", "Assembly"]} />
-            <SkillCategory title="Core Systems" icon={Database} skills={["Compilers", "Operating Systems", "Multithreading", "Memory Management"]} />
-            <SkillCategory title="Networking & Security" icon={Network} skills={["Socket Programming", "TCP/IP", "Cryptography", "Pentesting", "Secure Design"]} />
-            <SkillCategory title="AI & Data Science" icon={Binary} skills={["NLP", "Machine Learning", "Clustering", "Word2Vec", "NumPy", "Pandas", "Scikit-learn"]} />
-            <SkillCategory title="Environment & Tools" icon={Layers} skills={["Linux", "Git", "GCC", "Firebase", "React", "Flex", "Bison"]} />
-            <SkillCategory title="Computer Science" icon={Binary} skills={["Data Structures", "Algorithms", "Complexity", "Automata"]} />
+            <h2 className="text-5xl md:text-6xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
+              Technical Arsenal
+            </h2>
+          </motion.div>
+
+          {/* Grid of skill cards */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <SkillCategory
+              title="Programming"
+              icon={Code2}
+              skills={["C++", "Python", "C", "Java", "SQL", "Bash", "Assembly"]}
+              gradient="from-blue-500 to-cyan-500"
+            />
+            <SkillCategory
+              title="Core Systems"
+              icon={Database}
+              skills={["Compilers", "Operating Systems", "Multithreading", "Memory Management"]}
+              gradient="from-purple-500 to-pink-500"
+            />
+            <SkillCategory
+              title="Networking & Security"
+              icon={Network}
+              skills={["Socket Programming", "TCP/IP", "Cryptography", "Pentesting", "Secure Design"]}
+              gradient="from-red-500 to-orange-500"
+            />
+            <SkillCategory
+              title="AI & Data Science"
+              icon={Binary}
+              skills={["NLP", "Machine Learning", "Clustering", "Word2Vec", "NumPy", "Pandas", "Scikit-learn"]}
+              gradient="from-green-500 to-emerald-500"
+            />
+            <SkillCategory
+              title="Environment & Tools"
+              icon={Layers}
+              skills={["Linux", "Git", "GCC", "Firebase", "React", "Flex", "Bison"]}
+              gradient="from-indigo-500 to-blue-500"
+            />
+            <SkillCategory
+              title="Computer Science"
+              icon={Binary}
+              skills={["Data Structures", "Algorithms", "Complexity", "Automata"]}
+              gradient="from-violet-500 to-purple-500"
+            />
           </motion.div>
         </div>
       </section>
 
-      {/* --- EDUCATION & LANGUAGES (Original) --- */}
-      <section className="py-32 px-6 max-w-6xl mx-auto">
+      {/* --- EDUCATION & LANGUAGES --- */}
+      <section className="py-16 px-6 max-w-6xl mx-auto">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-          <SectionHeading title="Education" icon={GraduationCap} />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mb-12 text-center"
+          >
+            <h2 className="text-5xl md:text-6xl font-black text-slate-900 dark:text-white uppercase tracking-tighter">
+              Education
+            </h2>
+          </motion.div>
           <div className="bg-slate-900 text-white p-12 rounded-[3rem] shadow-2xl relative overflow-hidden flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="relative z-10 text-center md:text-left">
               <h3 className="text-3xl font-black mb-2 tracking-tight">SAMI SHAMOON COLLEGE (SCE)</h3>
