@@ -49,6 +49,16 @@ const projectsData = [
     image: "/assets/empire.png",
     color: "purple"
   },
+  {
+    id: 'pricetracker',
+    title: 'Amazon Price Tracker',
+    subtitle: 'Data Engineering',
+    description: 'Automated ETL pipeline using n8n and Google Sheets to monitor and visualize Amazon RAM price volatility. Features real-time data scraping, automated cleaning, and interactive market trend analysis. Identified 244% price surge in DDR5 modules between Q4 2025 and Q1 2026.',
+    tags: ["n8n", "ScraperAPI", "JavaScript", "Google Sheets", "ETL"],
+    github: "https://github.com/yos4i/Amazon-Price-Tracker",
+    image: "/assets/pricetracker.png",
+    color: "orange"
+  },
 ];
 
 // Color Mapping
@@ -56,7 +66,8 @@ const colorVariants = {
   blue: { bg: "bg-blue-600", text: "text-blue-600", light: "bg-blue-50" },
   indigo: { bg: "bg-indigo-600", text: "text-indigo-600", light: "bg-indigo-50" },
   green: { bg: "bg-green-600", text: "text-green-600", light: "bg-green-50" },
-  purple: { bg: "bg-purple-600", text: "text-purple-600", light: "bg-purple-50" }
+  purple: { bg: "bg-purple-600", text: "text-purple-600", light: "bg-purple-50" },
+  orange: { bg: "bg-orange-600", text: "text-orange-600", light: "bg-orange-50" }
 };
 
 // --- Animation Variants ---
@@ -150,6 +161,7 @@ const Card = ({ project, index, range, targetScale }) => {
                 {project.id === 'seemanthink' && <Cpu size={20} />}
                 {project.id === 'tmmpro' && <Database size={20} />}
                 {project.id === 'empire' && <Globe size={20} />}
+                {project.id === 'pricetracker' && <Activity size={20} />}
               </div>
               <span className={`text-sm font-bold uppercase tracking-widest ${colorVariants[project.color].text}`}>{project.subtitle}</span>
             </div>
@@ -185,15 +197,15 @@ const Card = ({ project, index, range, targetScale }) => {
         </div>
 
         {/* Image Side */}
-        <div className="w-full md:w-[60%] h-full relative overflow-hidden bg-slate-100 dark:bg-slate-950">
-          <motion.div style={{ scale: imageScale }} className="w-full h-full">
-            <img 
+        <div className={`w-full md:w-[60%] h-full relative overflow-hidden ${project.id === 'pricetracker' ? 'bg-gradient-to-br from-orange-50 via-white to-orange-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900' : 'bg-slate-100 dark:bg-slate-950'}`}>
+          <motion.div style={{ scale: imageScale }} className="w-full h-full flex items-center justify-center p-8">
+            <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className={`${project.id === 'pricetracker' ? 'w-full h-full object-contain' : 'w-full h-full object-cover'}`}
               onError={(e) => {
-                  e.target.onerror = null; 
-                  e.target.src = "https://placehold.co/1200x800/1e293b/FFF?text=Project+Preview"; 
+                  e.target.onerror = null;
+                  e.target.src = "https://placehold.co/1200x800/1e293b/FFF?text=Project+Preview";
               }}
             />
           </motion.div>
